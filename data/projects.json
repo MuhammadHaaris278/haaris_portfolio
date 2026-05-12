@@ -1,0 +1,82 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "HybridChatbot",
+      "description": "A sophisticated AI chatbot combining multiple LLMs with retrieval-augmented generation for context-aware responses.",
+      "category": "AI",
+      "technologies": ["LangChain", "OpenAI", "Python", "FastAPI", "Vector DB"],
+      "highlights": [
+        "Multi-LLM support for optimal responses",
+        "RAG implementation for knowledge base integration",
+        "Real-time streaming responses"
+      ],
+      "year": 2024
+    },
+    {
+      "id": 2,
+      "title": "Medical QA System",
+      "description": "An intelligent question-answering system fine-tuned on medical data using retrieval-augmented generation.",
+      "category": "AI",
+      "technologies": ["Fine-tuning", "RAG", "Medical Datasets", "Python", "OpenAI"],
+      "highlights": [
+        "Custom medical knowledge base",
+        "Accurate domain-specific responses",
+        "Production-ready API"
+      ],
+      "year": 2024
+    },
+    {
+      "id": 3,
+      "title": "VLM Fine-Tuning Pipeline",
+      "description": "A comprehensive pipeline for fine-tuning vision language models on custom datasets.",
+      "category": "AI",
+      "technologies": ["PyTorch", "Vision Transformers", "Python", "CUDA", "Hugging Face"],
+      "highlights": [
+        "Automated data preprocessing",
+        "Multi-GPU training support",
+        "Model evaluation metrics"
+      ],
+      "year": 2024
+    },
+    {
+      "id": 4,
+      "title": "Portfolio Dashboard",
+      "description": "Full-stack web application showcasing projects with real-time analytics and admin panel.",
+      "category": "Web",
+      "technologies": ["Next.js", "React", "MongoDB", "Tailwind CSS", "Vercel"],
+      "highlights": [
+        "Responsive design",
+        "Admin dashboard",
+        "Real-time updates"
+      ],
+      "year": 2024
+    },
+    {
+      "id": 5,
+      "title": "E-commerce Platform",
+      "description": "Full-stack e-commerce solution with payment integration and inventory management.",
+      "category": "Web",
+      "technologies": ["MERN Stack", "Stripe", "Redux", "Material-UI", "PostgreSQL"],
+      "highlights": [
+        "Secure payment processing",
+        "Inventory management",
+        "User authentication"
+      ],
+      "year": 2023
+    },
+    {
+      "id": 6,
+      "title": "Real-time Collaboration Tool",
+      "description": "Web application enabling real-time collaborative editing and communication.",
+      "category": "Web",
+      "technologies": ["WebSockets", "React", "Node.js", "Redis", "Yjs"],
+      "highlights": [
+        "Real-time sync",
+        "Conflict resolution",
+        "User presence awareness"
+      ],
+      "year": 2023
+    }
+  ]
+}
