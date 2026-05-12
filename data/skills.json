@@ -1,0 +1,62 @@
+{
+  "skillCategories": [
+    {
+      "category": "AI & Machine Learning",
+      "icon": "brain",
+      "skills": [
+        { "name": "Large Language Models", "proficiency": 95 },
+        { "name": "RAG Systems", "proficiency": 90 },
+        { "name": "Prompt Engineering", "proficiency": 92 },
+        { "name": "Fine-tuning", "proficiency": 88 },
+        { "name": "LangChain", "proficiency": 93 },
+        { "name": "Vector Databases", "proficiency": 85 }
+      ]
+    },
+    {
+      "category": "Backend Development",
+      "icon": "server",
+      "skills": [
+        { "name": "Python", "proficiency": 94 },
+        { "name": "Node.js", "proficiency": 90 },
+        { "name": "FastAPI", "proficiency": 89 },
+        { "name": "Express.js", "proficiency": 88 },
+        { "name": "REST APIs", "proficiency": 92 },
+        { "name": "WebSockets", "proficiency": 85 }
+      ]
+    },
+    {
+      "category": "Frontend Development",
+      "icon": "layout",
+      "skills": [
+        { "name": "React", "proficiency": 94 },
+        { "name": "Next.js", "proficiency": 93 },
+        { "name": "TypeScript", "proficiency": 91 },
+        { "name": "Tailwind CSS", "proficiency": 95 },
+        { "name": "Framer Motion", "proficiency": 88 },
+        { "name": "UI Components", "proficiency": 90 }
+      ]
+    },
+    {
+      "category": "Databases",
+      "icon": "database",
+      "skills": [
+        { "name": "MongoDB", "proficiency": 88 },
+        { "name": "PostgreSQL", "proficiency": 86 },
+        { "name": "Redis", "proficiency": 82 },
+        { "name": "Pinecone", "proficiency": 85 },
+        { "name": "Data Modeling", "proficiency": 87 }
+      ]
+    },
+    {
+      "category": "Tools & DevOps",
+      "icon": "wrench",
+      "skills": [
+        { "name": "Git & GitHub", "proficiency": 92 },
+        { "name": "Docker", "proficiency": 85 },
+        { "name": "Vercel", "proficiency": 90 },
+        { "name": "Linux", "proficiency": 88 },
+        { "name": "CI/CD", "proficiency": 82 }
+      ]
+    }
+  ]
+}
