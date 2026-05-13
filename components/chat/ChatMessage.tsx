@@ -1,16 +1,14 @@
-"use client";
+"use client"
 
-import { Message } from "ai";
-import { motion } from "framer-motion";
-import Markdown from "react-markdown";
+import { motion } from "framer-motion"
+import Markdown from "react-markdown"
 
 interface ChatMessageProps {
-  message: Message;
+  message: string
+  isUser: boolean
 }
 
-export default function ChatMessage({ message }: ChatMessageProps) {
-  const isUser = message.role === "user";
-
+export default function ChatMessage({ message, isUser }: ChatMessageProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 10 }}
@@ -21,13 +19,13 @@ export default function ChatMessage({ message }: ChatMessageProps) {
         className={`max-w-2xl px-4 py-3 rounded-3xl ${
           isUser
             ? "bg-primary text-primary-foreground rounded-br-none shadow-lg"
-            : "bg-white/8 text-foreground border border-white/15 rounded-bl-none backdrop-blur-xl shadow-lg hover:bg-white/12 transition-colors"
+            : "bg-white/80 text-foreground border border-white/70 rounded-bl-none backdrop-blur-xl shadow-lg transition-colors"
         }`}
       >
         {isUser ? (
-          <p className="text-sm leading-relaxed">{message.content}</p>
+          <p className="text-sm leading-relaxed">{message}</p>
         ) : (
-          <div className="prose prose-invert max-w-none text-sm leading-relaxed">
+          <div className="prose max-w-none text-sm leading-relaxed">
             <Markdown
               components={{
                 p: ({ children }) => <p className="mb-2 last:mb-0">{children}</p>,
@@ -37,27 +35,20 @@ export default function ChatMessage({ message }: ChatMessageProps) {
                 ol: ({ children }) => <ol className="list-decimal list-inside mb-2 space-y-1">{children}</ol>,
                 li: ({ children }) => <li className="ml-2">{children}</li>,
                 code: ({ children }) => (
-                  <code className="bg-black/30 rounded px-2 py-1 text-xs font-mono">
-                    {children}
-                  </code>
+                  <code className="bg-black/10 rounded px-2 py-1 text-xs font-mono">{children}</code>
                 ),
                 a: ({ children, href }) => (
-                  <a
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary hover:underline"
-                  >
+                  <a href={href} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
                     {children}
                   </a>
                 ),
               }}
             >
-              {message.content}
+              {message}
             </Markdown>
           </div>
         )}
       </div>
     </motion.div>
-  );
+  )
 }

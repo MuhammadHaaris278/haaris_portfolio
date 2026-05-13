@@ -1,27 +1,31 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import type { Metadata, Viewport } from "next"
+import type { ReactNode } from "react"
+
+import { profile } from "@/data/portfolio"
 import "./globals.css"
 
-const inter = Inter({ subsets: ["latin"] })
-
 export const metadata: Metadata = {
-  title: "Muhammad Haaris - AI Engineer & Full-Stack Developer",
+  title: `${profile.name} - AI Portfolio`,
   description:
-    "Meet Muhammad Haaris - AI Engineer specializing in LLMs, RAG systems, and full-stack web development. Explore his projects and expertise.",
+    "AI Engineer specializing in LLMs, RAG systems, intelligent automation, and production-ready AI products.",
+  icons: {
+    icon: [
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [{ url: "/apple-icon.png", type: "image/png", sizes: "180x180" }],
+  },
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#ffffff",
+}
+
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning className="dark bg-background">
-      <head></head>
-      <body className={`${inter.className} dark`}>
-        {children}
-      </body>
+    <html lang="en">
+      <body>{children}</body>
     </html>
   )
 }

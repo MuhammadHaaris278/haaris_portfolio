@@ -1,9 +1,5 @@
-import ChatInterface from "@/components/chat/ChatInterface"
+import PortfolioHome from "@/components/home/PortfolioHome"
 
 export default function Home() {
-  return (
-    <main className="h-screen flex flex-col bg-background">
-      <ChatInterface />
-    </main>
-  )
+  return <PortfolioHome />
 }

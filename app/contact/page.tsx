@@ -8,7 +8,7 @@ import { Github, Linkedin, Mail, Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { toast } from "@/hooks/use-toast"
+import { profile } from "@/data/portfolio"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -16,27 +16,9 @@ export default function ContactPage() {
     email: "",
     message: "",
   })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
-  }
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-
-    toast({
-      title: "Message sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
-    })
-
-    setFormData({ name: "", email: "", message: "" })
-    setIsSubmitting(false)
   }
 
   return (
@@ -61,10 +43,10 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-medium">Email</h3>
                   <a
-                    href="mailto:muhammad.haaris2003@gmail.com"
+                    href={`mailto:${profile.email}`}
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    muhammad.haaris2003@gmail.com
+                    {profile.email}
                   </a>
                 </div>
               </div>
@@ -76,12 +58,12 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-medium">LinkedIn</h3>
                   <a
-                    href="https://linkedin.com/in/haaris278"
+                    href={profile.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    linkedin.com/in/haaris278
+                    {profile.linkedinLabel}
                   </a>
                 </div>
               </div>
@@ -93,12 +75,12 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-medium">GitHub</h3>
                   <a
-                    href="https://github.com/MuhammadHaaris278"
+                    href={profile.github}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    github.com/MuhammadHaaris278
+                    {profile.githubLabel}
                   </a>
                 </div>
               </div>
@@ -108,7 +90,7 @@ export default function ContactPage() {
               <h2 className="text-2xl font-bold mb-6">Connect With Me</h2>
               <div className="flex gap-4">
                 <a
-                  href="https://linkedin.com/in/haaris278"
+                  href={profile.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 rounded-full bg-card hover:bg-muted transition-colors"
@@ -117,7 +99,7 @@ export default function ContactPage() {
                   <Linkedin className="w-6 h-6" />
                 </a>
                 <a
-                  href="https://github.com/MuhammadHaaris278"
+                  href={profile.github}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 rounded-full bg-card hover:bg-muted transition-colors"
@@ -126,7 +108,7 @@ export default function ContactPage() {
                   <Github className="w-6 h-6" />
                 </a>
                 <a
-                  href="mailto:muhammad.haaris2003@gmail.com"
+                  href={`mailto:${profile.email}`}
                   className="p-3 rounded-full bg-card hover:bg-muted transition-colors"
                   aria-label="Email"
                 >
@@ -140,7 +122,7 @@ export default function ContactPage() {
             <h2 className="text-2xl font-bold mb-6">Send Me a Message</h2>
 
            <form 
-  action="https://formsubmit.co/muhammad.haaris2003@gmail.com" 
+  action={`https://formsubmit.co/${profile.email}`} 
   method="POST"
   className="space-y-6"
 >
